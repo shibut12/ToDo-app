@@ -1,10 +1,10 @@
 import * as types from '../actions/actionTypes';
 import initialState from './initialState';
 
-export default function todoReducer(state=initialState.todos, action){
+export default function todoReducer(state=initialState.items, action){
     switch(action.type){
         case types.LOAD_TODO:
-            return action.todos;
+            return action.items;
         default:
             return state;
     }
