@@ -28,7 +28,12 @@ class App extends Component {
   onChange(event){
     const fieldName = event.target.name;
     let item = this.state.item;
-    item[fieldName] = event.target.value;
+    if(fieldName==='isCompleted'){
+      item[fieldName] = event.target.value === 'on' ? true : false;
+    }
+    else {
+      item[fieldName] = event.target.value;
+    }
     return this.setState({item: item});
   }
 

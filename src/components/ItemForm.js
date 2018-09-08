@@ -18,6 +18,13 @@ const ItemForm =({onSave, onChange, item}) =>{
                     type="text"
                     onChange={onChange}/>
             </div>
+            <div>
+                <label htmlFor="isCompleted">Is Completed?</label>
+                <input 
+                    name="isCompleted"
+                    type="checkbox"
+                    onChange={onChange}/>
+            </div>
             <input 
                 type="submit"
                 value="Save"

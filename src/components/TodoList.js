@@ -7,7 +7,7 @@ const TodoList = ({items}) => {
             <ul>
                 {
                     items.map(item =>
-                        <li key={item.id}>{item.description}</li>
+                        <li key={item.id}>{item.id} {item.description} {item.isCompleted === true ? 'Completed' : 'Not completed'}</li>
                     )
                 }
             </ul>
