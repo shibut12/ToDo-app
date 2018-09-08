@@ -8,6 +8,13 @@ export function loadItemsSuccess(items){
     }
 }
 
+export function addItem(item){
+    return{
+        type: types.ADD_TODO,
+        item
+    }
+}
+
 export function loadItems(){
     return function(dispatch){
         return todoApi.getAllItems().then(items =>{
