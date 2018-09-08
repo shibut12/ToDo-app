@@ -17,7 +17,7 @@ const items = [
     }
 ];
 
-const delay = 1;
+const delay = 1000;
 
 class todoApi{
     static getAllItems(){

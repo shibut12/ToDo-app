@@ -1,25 +1,19 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
 
 import TodoList from './TodoList';
 import * as todoActions from '../actions/todoActions';
 
 class App extends Component {
-  constructor(props, context){
-    super(props, context);
-  }
-
   render() {
-    const {itemList} = this.props;
-    return (
-      <div>
-        <h1>Todo app</h1>
-        <hr />
-        <TodoList items={itemList}/>
-      </div>
-    );
+      return (
+        <div>
+          <h1>Todo app</h1>
+          <hr />
+          <TodoList items={this.props.items}/>         
+        </div>
+      );
   }
 }
 
