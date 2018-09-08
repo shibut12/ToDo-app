@@ -1,6 +1,6 @@
 # TODO App
 
-A simple todo app creating using _React & Redux_.
+A simple todo app created using _React & Redux_.
 
 ```shell
 git clone https://github.com/shibut12/ToDo-app.git
