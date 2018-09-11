@@ -20,3 +20,9 @@ npm start
 6. Create _onChange()_ function in App.js to update local state when input form changes.
 7. Created _container_ __ItemForm.js__ with input fields and submit button. Form uses methods passed in props to act on data.
 8. Created _saveItem()_ function to submit form with data in _state: item_
+
+## Changes for marking complete
+
+1. Added status field to items array 
+2. Defined _MARK_COMPLETE_ in actionTypes.js
+3. Defined action `markComplete` in todoActions.js

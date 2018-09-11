@@ -10,6 +10,10 @@ export default function todoReducer(state=initialState.items, action){
                 ...state,
                 Object.assign({}, action.item)
             ];
+        case types.MARK_COMPLETE:
+            return[
+                
+            ];
         default:
             return state;
     }

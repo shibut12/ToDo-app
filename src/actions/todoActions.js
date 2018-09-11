@@ -15,6 +15,13 @@ export function addItem(item){
     }
 }
 
+export function markComplete(item){
+    return{
+        type: types.MARK_COMPLETE,
+        item
+    }
+}
+
 export function loadItems(){
     return function(dispatch){
         return todoApi.getAllItems().then(items =>{
