@@ -26,5 +26,3 @@ npm start
 1. Added status field to items array 
 2. Defined _MARK_COMPLETE_ in actionTypes.js
 3. Defined action `markComplete` in todoActions.js
- 
- 
