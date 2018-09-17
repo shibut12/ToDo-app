@@ -13,6 +13,7 @@ class App extends Component {
       return (
         <div>
           <h1>Todo app</h1>
+          <h2>{this.props.toggle}</h2>
           <ItemForm />
           <hr />
           <TodoList items={this.props.items}/>         
@@ -28,7 +29,8 @@ App.propTypes = {
 
 function mapStateToProps(state, ownProps){
   return{
-    items: state.items
+    items: state.items,
+    toggle: state.toggle
   };
 }
 
