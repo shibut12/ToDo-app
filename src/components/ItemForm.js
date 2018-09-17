@@ -1,42 +1,57 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {addItem} from '../actions/todoActions';
+import {connect} from 'react-redux';
 
-const ItemForm =({onSave, onChange, item}) =>{
+let ItemForm =({item, dispatch}) =>{
+    let id, description, isCompleted
     return(
-        <form>
+        <form onSubmit={e=>{
+            e.preventDefault()
+            const itm={
+                id:id.value,
+                description:description.value,
+                isCompleted:isCompleted.value==='on'?true:false
+            }
+            dispatch(addItem(itm))
+        }}>
             <div>
                 <label htmlFor="id">Id</label>
                 <input 
                     name="id"
                     type="text"
-                    onChange={onChange}/>
+                    ref={node=>{
+                        id=node
+                    }}/>
             </div>
             <div>
                 <label htmlFor="description">Description</label>
                 <input 
                     name="description"
                     type="text"
-                    onChange={onChange}/>
+                    ref={node=>{
+                        description = node
+                    }}/>
             </div>
             <div>
                 <label htmlFor="isCompleted">Is Completed?</label>
                 <input 
                     name="isCompleted"
                     type="checkbox"
-                    onChange={onChange}/>
+                    ref={node=>{
+                        isCompleted = node
+                    }}/>
             </div>
             <input 
                 type="submit"
-                value="Save"
-                onClick={onSave}/>
+                value="Save"/>
         </form>
     );
 }
 
 ItemForm.propTypes = {
-    onSave: PropTypes.func.isRequired,
-    onChange: PropTypes.func.isRequired,
     item: PropTypes.object
 }
 
+ItemForm = connect()(ItemForm)
 export default ItemForm;

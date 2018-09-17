@@ -8,40 +8,12 @@ import ItemForm from './ItemForm';
 import * as todoActions from '../actions/todoActions';
 
 class App extends Component {
-  constructor(props, context){
-    super(props, context);
-
-    this.state={
-      item: Object.assign({}, this.props.item)
-    }
-
-    this.saveItem = this.saveItem.bind(this);
-    this.onChange = this.onChange.bind(this);
-  }
-
-  saveItem(event){
-    event.preventDefault();
-
-    this.props.actions.addItem(this.state.item);
-  }
-
-  onChange(event){
-    const fieldName = event.target.name;
-    let item = this.state.item;
-    if(fieldName==='isCompleted'){
-      item[fieldName] = event.target.value === 'on' ? true : false;
-    }
-    else {
-      item[fieldName] = event.target.value;
-    }
-    return this.setState({item: item});
-  }
 
   render() {
       return (
         <div>
           <h1>Todo app</h1>
-          <ItemForm onSave={this.saveItem} onChange={this.onChange}/>
+          <ItemForm />
           <hr />
           <TodoList items={this.props.items}/>         
         </div>
